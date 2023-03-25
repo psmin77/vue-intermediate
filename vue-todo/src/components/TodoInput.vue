@@ -15,14 +15,13 @@ export default {
         }
     },
     methods: {
-        addTodo: function() {
+        addTodo() {
             if (this.newTodoItem !== '') {
-                var obj = { completed: false, item: this.newTodoItem };
-                localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+                this.$emit('addTodoItem', this.newTodoItem);
                 this.clearInput();
             }
         },
-        clearInput: function() {
+        clearInput() {
             this.newTodoItem = '';
         }
     }
