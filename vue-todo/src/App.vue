@@ -14,7 +14,7 @@ import TodoList from './components/TodoList.vue'
 import TodoFooter from './components/TodoFooter.vue'
 
 export default {
-  components: { TodoHeader, TodoInput, TodoList, TodoFooter },
+  components: { TodoHeader, TodoInput, TodoList, TodoFooter }
 }
 </script>
 
