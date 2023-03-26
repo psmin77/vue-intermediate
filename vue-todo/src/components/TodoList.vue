@@ -21,11 +21,7 @@ export default {
             this.$emit('removeTodoItem', index);
         },
         toggleComplete(index) {
-            var item = this.todoItems[index];
-            item.completed = !item.completed;
-
-            localStorage.removeItem(item.item);
-            localStorage.setItem(item.item, JSON.stringify(item));
+            this.$emit('completeTodoItem', index);
         }
     }
 }
