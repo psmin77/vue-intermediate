@@ -37,7 +37,7 @@
 
 <script>
 export default {
-  data: function() {
+  data() {
     return {
       showModal: false
     }
