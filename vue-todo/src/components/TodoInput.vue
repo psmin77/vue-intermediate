@@ -17,7 +17,7 @@ import ModalComponent from './common/ModalComponent.vue';
 
 export default {
     components: {ModalComponent},
-    data: function() {
+    data() {
         return {
             newTodoItem: '',
             showModal: false,
