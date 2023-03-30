@@ -4,14 +4,24 @@
         <span class="addContainer" v-on:click="addTodo">
             <i class="fa-solid fa-plus"></i>
         </span>
+
+        <ModalComponent v-if="showModal" @close="showModal = false">
+            <h3 slot="header">Notice</h3>
+            <div slot="body">{{ message }}</div>
+        </ModalComponent>
     </div>  
 </template>
 
 <script>
+import ModalComponent from './common/ModalComponent.vue';
+
 export default {
+    components: {ModalComponent},
     data: function() {
         return {
-            newTodoItem: ''
+            newTodoItem: '',
+            showModal: false,
+            message: ''
         }
     },
     methods: {
@@ -19,6 +29,9 @@ export default {
             if (this.newTodoItem !== '') {
                 this.$emit('addTodoItem', this.newTodoItem);
                 this.clearInput();
+            } else {
+                this.message = "데이터를 입력하세요."
+                this.showModal = true;
             }
         },
         clearInput() {
